@@ -2,7 +2,7 @@
 \documentclass[fleqn,a4paper,12pt]{article}
   \usepackage[german]{babel}
   \usepackage[utf8]{inputenc}
-  %\usepackage{amsmath}    % Mathematische Symbole
+  \usepackage{amsmath}    % Mathematische Symbole
   \usepackage{amssymb}     % Nochmehr mathematische Symbole
   \usepackage{dsfont}      % Schriftsatz fuer Zahlenmengensymbole
   %\usepackage{verbatim}   % erweiterte Verbatim-Umgebung
@@ -134,5 +134,27 @@
     \includegraphics[width=1.0\textwidth]{histo5.png}
     \caption{Kumulative Histogramm für die Summe der Augenzahlen mit zwei Würfeln bei 1000 Würfen \newline gelb: Standardabweichung, rot: Modalwert, grün: Median, violett: Mittwelwert}
   \end{figure}
+  \pagebreak
+  Übungsaufgabe 7 \\
+  Aus der Dichtefunktion $p(x) = \lambda e^{-\lambda x}$, $x \geq 0$ ergibt sich die Verteilungsfunktion: \[F(x) = \int p(x) dx = -e^{-\lambda x} + C\]
+  Für kontinuierliche Zufallsgrößen ergibt sich der gesuchte \textit{Median} $x_{med}$ folgendermaßen:
+  \begin{align*}
+      \int_{-\infty}^{x_{med}} p(x) dx &= \frac{1}{2} \\
+      \Leftrightarrow \quad \int_0^{x_{med}} p(x) dx &= \frac{1}{2} \quad \text{Da }  p(x) = 0 \text{ für } x < 0 \\
+      \Leftrightarrow \left[ -e^{-\lambda x} + C \right]_{0}^{x_{med}} &= \frac{1}{2} \\
+      \text{Wähle } \lambda = \frac{1}{2} \\
+      \Rightarrow \quad -e^{-\frac{1}{2}x_{med}} + 1 &= \frac{1}{2} \\
+      \Rightarrow x_{med} = -2 \cdot \ln \frac{1}{2}
+  \end{align*}
+  Der Erwartungswert ergibt sich aus \[E(X) = \int_{-\infty}^{+\infty} x \cdot  p(x) dx\] \\
+  Lösen des Integrals ergibt dann $E(X) = 2$. \\
+  Die Varianz ergibt sich aus \[\textit{Var}(X) = \int_{-\infty}^{+\infty} ( x - E(X) )^2 \cdot p(x) dx\]
+  Lösen des Integrals ergibt dann $\textit{Var}(X) = 4$.
+  \begin{figure}
+      \includegraphics[width=1.0\textwidth]{sv0_7.png}
+      \caption{Darstellung der gegebenen Dichtefunktion und einiger Kenngrößen}
+  \end{figure}
+    
   \end{document}
+
   
