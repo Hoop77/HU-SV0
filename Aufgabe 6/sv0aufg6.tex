@@ -1,0 +1,71 @@
+% (c) Gerard Baecker
+\documentclass[fleqn,a4paper,12pt]{article}
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}    % Mathematische Symbole
+\usepackage{amssymb}     % Nochmehr mathematische Symbole
+\usepackage{dsfont}      % Schriftsatz fuer Zahlenmengensymbole
+%\usepackage{verbatim}   % erweiterte Verbatim-Umgebung
+\usepackage{alltt}       % Quasi-Verbatim-Umgebung
+\usepackage{fancyhdr}    % Eigene Kopfzeilen
+\usepackage{graphicx}    % Zum Einbinden von Grafiken
+% Einbinden einer eps-Grafik geht so: includegraphics{path}
+
+% Seitenraender
+\addtolength{\voffset}{-2cm}
+\addtolength{\textheight}{0cm}
+\addtolength{\hoffset}{0cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\headheight}{2cm} % fuer jeden Strichkode einen Zentimeter
+
+% Skalierung der Grafiken
+\setlength{\unitlength}{1cm}
+
+\pagestyle{fancy}            % Eigene Kopfzeilen verwenden
+\frenchspacing               % Kein Extrafreiraum nach Satzzeichen
+\setlength{\parindent}{0pt}  % Neue Absaetze nicht einruecken
+%\sloppy                     % Schlampige Absatzformatierung
+\fussy                       % Penible Absatzformatierung
+\linespread{1.5}             % Zeilenabstand
+
+% Font fuer Code 39
+\font\xlix=wlc39 scaled 1200
+\newcommand\barcode[1]{{\xlix@#1@}}
+
+% Name, Matrikelnummer, Barcode
+\newcommand\student[2]{
+	\mbox{\scriptsize
+		\begin{tabular}{@{}l@{}r@{}}
+			\multicolumn{2}{@{}r@{}}{\barcode{#2}}\\
+			#1&#2\\
+\end{tabular}}}
+
+% Kopfzeile
+\lhead{
+	\small
+	\textsc{Grundlagen der Signalverarbeitung \\
+		WS 2017/2018 \\
+		\"Ubung (\today)}
+	\vfill}
+\rhead{
+	\begin{tabular}[b]{@{}rr@{}}
+		\student{Philipp Badenhoop}{572693} &
+		\student{Steven Lange}{789012} \\
+		\student{Pascal Jochmann}{575056} &
+		\student{Kevin Trogant}{572451}
+\end{tabular}}
+
+\begin{document}
+	\begin{figure}
+		\includegraphics[width=1.0\textwidth]{H1.png}
+		\caption{normiertes Histogramm f\"ur runden W\"urfel}
+	\end{figure}
+	\pagebreak
+	Übungsaufgabe 6 \\
+	Das Histogramm beschreibt eine Wahrscheinlichkeitsdichtefunktion. Die Fl\"ache unter der Funktion $p(x)$ ist gleich 1. \\
+	Der Mittelwert ist $m = \frac{a+b}{2} = \frac{7}{2} = 3,5$ \\
+	Der Varianz ist $v = \frac{(b-a)^2}{12} = \frac{36}{12} = 3 $ \\
+	Die Standardabweichung ist $\sqrt{v} = 1,732$
+
+	
+\end{document}
