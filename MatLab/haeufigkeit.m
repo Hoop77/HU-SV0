@@ -1,5 +1,6 @@
 function[wert, anzahl] = haeufigkeit(daten)
+    daten = daten(:);
     wert = unique(daten);
-    hist(daten, wert);
-    [anzahl, wert] = histc(daten, wert);
+    anzahl = hist(daten, wert);
+    wert = transpose(wert);
 end
