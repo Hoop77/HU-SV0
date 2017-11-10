@@ -91,5 +91,5 @@ class Signal:
         return np.sum(self.p * np.log2(np.reciprocal(self.p)))
 
     def max_entropy(self):
-        return np.log10(len(self.x))
+        return np.log2(len(self.x))
     

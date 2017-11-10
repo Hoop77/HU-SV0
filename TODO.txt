@@ -1,6 +1,6 @@
  7: Kevin
  8: Steven (still workin' - upload missing)
- 9: Philipp
+ 9: Philipp DONE
 10:
 11:
 12:
@@ -12,8 +12,8 @@ Matlab:
 1.4: Steven
 1.5: Steven
 
-2.1: Philipp
-2.2: Philipp
+2.1: Philipp DONE
+2.2: Philipp DONE
 2.3: Kevin
 2.4: Kevin
 2.5:

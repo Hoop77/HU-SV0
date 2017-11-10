@@ -10,6 +10,10 @@
   \usepackage{fancyhdr}    % Eigene Kopfzeilen
   \usepackage{graphicx}    % Zum Einbinden von Grafiken
   % Einbinden einer eps-Grafik geht so: includegraphics{path}
+  \usepackage{wrapfig}
+  \usepackage{lscape}
+  \usepackage{rotating}
+  \usepackage{epstopdf}
   
   % Seitenraender
   \addtolength{\voffset}{-2cm}
@@ -75,5 +79,20 @@
       \includegraphics[width=1.0\textwidth]{sv0_7.png}
       \caption{Darstellung der gegebenen Dichtefunktion und einiger Kenngrößen}
   \end{figure}
+  \newpage
+  "Ubungsaufgabe 9: \newline
+  \begin{sidewaysfigure}
+      \includegraphics[width=1.0\textwidth]{a9_128.png}
+      \caption{Messreihe mit 128 Messwerten}
+  \end{sidewaysfigure}
+  \begin{sidewaysfigure}
+    \includegraphics[width=1.0\textwidth]{a9_1024.png}
+    \caption{Messreihe mit 1024 Messwerten}
+  \end{sidewaysfigure}
+  Zur Messreihe mit 1024 Messwerten: \newline
+  Mittelungleichung von Cauchy erfüllt: ja \newline
+  Normalverteilt: ja \newline
+  Interpretation Entropie: Der mittlere Informationsgehalt (Entropie) liegt mit $\approx 5.9$ relativ nah am maximalen Informationsgehalt $\approx 6.4$ (max. Entropie).
+  Damit ist der Informationsgehalt eines Messwertes relativ groß.
   \end{document}
   
