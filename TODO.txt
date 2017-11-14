@@ -1,19 +1,24 @@
- 7: Kevin
- 8: Steven DONE
- 9: Philipp DONE
-10: Philipp
-11:
-12:
+Open Tasks:
+- None
 
-Matlab:
-1.1: Steven
-1.2: Steven
-1.3: Steven
-1.4: Steven
-1.5: Steven
 
-2.1: Philipp DONE
-2.2: Philipp DONE
-2.3: Kevin
-2.4: Kevin
-2.5:
+
+
+History:
+U12: Pascal
+U11: Pascal
+U10: Philipp
+U09: Philipp
+U08: Steven
+U07: Kevin
+
+M2.5 ?
+M2.4 Kevin
+M2.3 Kevin
+M2.2 Philipp
+M2.1 Philipp
+M1.5 Steven
+M1.4 Steven
+M1.3 Steven
+M1.2 Steven
+M1.1 Steven
