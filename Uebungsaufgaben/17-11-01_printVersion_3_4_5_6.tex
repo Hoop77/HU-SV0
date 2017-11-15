@@ -17,6 +17,13 @@
 \usepackage{rotating}
 \usepackage{epstopdf}
 
+% Seitenraender
+\addtolength{\voffset}{-2cm}
+\addtolength{\textheight}{0cm}
+\addtolength{\hoffset}{0cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\headheight}{2cm} % fuer jeden Strichkode einen Zentimeter
+
 % Skalierung der Grafiken
 \setlength{\unitlength}{1cm}
 
@@ -26,6 +33,18 @@
 %\sloppy                     % Schlampige Absatzformatierung
 \fussy                       % Penible Absatzformatierung
 \linespread{1.5}             % Zeilenabstand
+
+% Font fuer Code 39
+\font\xlix=wlc39 scaled 1200
+\newcommand\barcode[1]{{\xlix@#1@}}
+
+% Name, Matrikelnummer, Barcode
+\newcommand\student[2]{
+\mbox{\scriptsize
+	\begin{tabular}{@{}l@{}r@{}}
+		\multicolumn{2}{@{}r@{}}{\barcode{#2}}\\
+		#1&#2\\
+	\end{tabular}}}
 
 %andere Definitionen
 \newcommand{\R}{{\mathbb R}}
@@ -39,42 +58,27 @@
 \newcommand{\Land}{\bigwedge}
 \newcommand{\Lor}{\bigvee}
 
+% Kopfzeile
+\lhead{
+	\small
+	\textsc{Grundlagen der Signalverarbeitung \\
+		WS 2017/2018 \\
+		\"Ubung (\today)}
+	\vfill}
+\rhead{
+	\begin{tabular}[b]{@{}rr@{}}
+		\student{Philipp Badenhoop}{572693} &
+		\student{Steven Lange}{568733} \\
+		\student{Pascal Jochmann}{575056} &
+		\student{Kevin Trogant}{572451}
+	\end{tabular}}
+
 \begin{document}
-	"Ubungsaufgabe 12: \newline
-	
-	\includegraphics[scale=0.4]{H3}
-	
-	a)Ganzes Signal:\\
-	$m_1 = 0,031		z_2 = 49$ \hspace{1cm}
-	Median = 0,	Modalwerte: $\pm $10
-	
-	Signal in zwei H\"alften:\\
-	Erste H\"alfte:	\hspace{5cm}										Zweite H\"alfte:\\
-	$m_1 = 0,21875$  $z_2 = 25$	\hspace{4cm}								$m_1 = -0,15625$  $z_2 = 24$\\
-	\\
-	b)\\
-	Es K\"onnen 16 nicht \"uberlappende Episoden heraugeschnitten werden.
-	Episodemittelswertvektor: $m = \frac{1}{M}\sum_{i=0}^{M-1}e_i$\\
-	$m = (0, 0,063, 0, 0,063)^T$\\
-	Seine Scharmittelwerte sind \"ahnlich $m_1 \rightarrow$ Signal ist  station\"ar und ergodisch.
+	\input{A03}
 	\newpage
-	Kovarianzmatrix: $S = \frac{1}{M}\sum_{i=0}^{M-1}(e_i-m)(e_i-m)^T$\\
-	$
-	\begin{bmatrix}
-	49   & 45 & 33	 &  16 \\
-	45 & 49 	& 45	 &  33 \\
-	33  & 45	& 48 	 & 45 \\
-	16 & 33	& 45	 &  49
-	\end{bmatrix}
-	$\\
-	Korrelationsmatrix $R_{u,v} = \frac{S_{u,v}}{\sqrt{S_{u,v} \sqrt{S_{u,v}}}}$
-	$
-	\begin{bmatrix}
-	1   & 0,91 & 0,67	 &  0,32 \\
-	0,91 & 1 	& 0,92	 &  0,68 \\
-	0,67 & 0,92	& 1 	 & 0,91 \\
-	0,32 & 0,68	& 0,91	 &  1
-	\end{bmatrix}
-	$\\Die Werte abseits der Hauptdiagonale sind (im Betrag) gro{\ss}, $\rightarrow$ das Signal ist nicht  zuf\"allig\\
-	
+	\input{A04}
+	\newpage
+	\input{A05}
+	\newpage
+	\input{A06}
 \end{document}

@@ -1,0 +1,78 @@
+\documentclass[fleqn,a4paper,12pt]{article}
+\usepackage{standalone}		% Zum Einlesen aus anderen .tex-Files
+\usepackage{geometry}		% Zur Bearbeitung des Layouts (Ränder,...)
+\geometry{left=30mm, right=40mm, bottom=30mm}
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}		% Mathematische Symbole
+\usepackage{amssymb}     	% Nochmehr mathematische Symbole
+\usepackage{dsfont}      	% Schriftsatz fuer Zahlenmengensymbole
+%\usepackage{verbatim}   	% erweiterte Verbatim-Umgebung
+\usepackage{alltt}       	% Quasi-Verbatim-Umgebung
+\usepackage{fancyhdr}    	% Eigene Kopfzeilen
+\usepackage{graphicx}    	% Zum Einbinden von Grafiken
+% Einbinden einer eps-Grafik geht so: includegraphics{path}
+\usepackage{wrapfig}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{epstopdf}
+
+% Seitenraender
+\addtolength{\voffset}{-2cm}
+\addtolength{\textheight}{0cm}
+\addtolength{\hoffset}{0cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\headheight}{2cm} % fuer jeden Strichkode einen Zentimeter
+
+% Skalierung der Grafiken
+\setlength{\unitlength}{1cm}
+
+\pagestyle{fancy}            % Eigene Kopfzeilen verwenden
+\frenchspacing               % Kein Extrafreiraum nach Satzzeichen
+\setlength{\parindent}{0pt}  % Neue Absaetze nicht einruecken
+%\sloppy                     % Schlampige Absatzformatierung
+\fussy                       % Penible Absatzformatierung
+\linespread{1.5}             % Zeilenabstand
+
+% Font fuer Code 39
+\font\xlix=wlc39 scaled 1200
+\newcommand\barcode[1]{{\xlix@#1@}}
+
+% Name, Matrikelnummer, Barcode
+\newcommand\student[2]{
+	\mbox{\scriptsize
+		\begin{tabular}{@{}l@{}r@{}}
+			\multicolumn{2}{@{}r@{}}{\barcode{#2}}\\
+			#1&#2\\
+\end{tabular}}}
+
+%andere Definitionen
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\less}{\setminus}
+\newcommand{\inv}{{}^{-1}}
+\newcommand{\Land}{\bigwedge}
+\newcommand{\Lor}{\bigvee}
+
+% Kopfzeile
+\lhead{
+	\small
+	\textsc{Grundlagen der Signalverarbeitung \\
+		WS 2017/2018 \\
+		\"Ubung (\today)}
+	\vfill}
+\rhead{
+	\begin{tabular}[b]{@{}rr@{}}
+		\student{Philipp Badenhoop}{572693} &
+		\student{Steven Lange}{568733} \\
+		\student{Pascal Jochmann}{575056} &
+		\student{Kevin Trogant}{572451}
+\end{tabular}}
+
+\begin{document}
+	
+\end{document}
