@@ -1,3 +1,16 @@
+"""
+    HOW TO USE
+    ==========
+    Simply type:
+        python merge.py 7 8 9 10 11 12
+    It creates a .tex and .pdf file which contains exercises 7 to 12.
+    The exercise numbers are simply seperated by a single whitespace (as program arguments).
+
+    !!! ATTENTION !!!
+    =================
+    This must be run from the directory "Uebungsaufgaben"!
+"""
+
 import sys
 from subprocess import call
 
