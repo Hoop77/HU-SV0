@@ -9,13 +9,19 @@ class Signal:
         self.x = np.array([])   # sorted numpy array of values
         self.p = np.array([])   # corresponding relative frequencies to values x
 
-    def load_from_file(self, filename):
+    def load_from_file(self, filename, column=0, start_measurement_idx=0, num_measurements=-1):
         with open(filename, "r") as f:
             measurements = []
+            measurement_idx = -1
             for line in f:
                 if not line.strip():
                     continue
-                measurements.append(float(line.split()[0]))
+                measurement_idx += 1
+                if measurement_idx < start_measurement_idx:
+                    continue
+                if num_measurements > 0 and len(measurements) >= num_measurements:
+                    break
+                measurements.append(float(line.split()[column]))
             self.set_measurements(measurements)
 
     def set_measurements(self, measurements):

@@ -2,6 +2,25 @@
 %\input{../__extendBarcode}			% Definition der Kopfzeile
 \input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
 
-\begin{document}
-	
+\begin{document}    
+    Übungsaufgabe 13: \newline \newline
+    \begin{tabular}{ | l | l | }
+        \hline
+        Signal & schwach stationär \\ \hline
+        1 & ja \\ \hline
+        2 & nein \\ \hline
+        3 & nein \\ \hline
+    \end{tabular}
+    \newline \newline
+    Begründung: \newline
+    Damit ein Signal schwach stationär ist, müssen Erwartungswert ($m_1$) und Varianz ($z_2$) zeitunabhängig sein.
+    Dies ist bei Signal 1 der Fall, da man in Figure~\ref{fig:m1_z2_plt} sehen kann, dass die Graphen für $m_1$ und $z_2$ konstant bleiben.
+    Signal 2 ist nicht schwach stationär, weil seine Varianz nicht konstant bleibt, sondern deutlich ansteigt.
+    Signal 3 ist nicht schwach stationär, weil sein Erwartungswert nicht konstant bleibt, sondern deutlich ansteigt.
+
+    \begin{sidewaysfigure}
+        \includegraphics[width=1.0\textwidth]{A13.png}
+        \caption{(13) $m_1$ und $z_2$ für Abschnitte von je 100 Messwerten}
+        \label{fig:m1_z2_plt}
+    \end{sidewaysfigure}
 \end{document}
