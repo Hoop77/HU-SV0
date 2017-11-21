@@ -1,6 +1,4 @@
 Open Tasks:
-U14: Steven (freeze...)
-
 M3.3: 
 M3.4: 
 M3.5:
@@ -8,6 +6,7 @@ M3.5:
 
 
 History:
+U14: Steven
 U13: Philipp
 U12: Pascal
 U11: Pascal
