@@ -84,4 +84,6 @@ if __name__ == "__main__":
             fout.write(BEGIN_DOCUMENT)
             copy_exercises(exercises, fout)
             fout.write(END_DOCUMENT)
+    # run pdflatex twice to insert references
+    call(["pdflatex", tex_filename])
     call(["pdflatex", tex_filename])
