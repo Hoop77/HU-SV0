@@ -9,8 +9,8 @@ M3.5:
 
 
 History:
-U17: Steven (upload missing..)
-U15: Philipp (upload missing..)
+U17: Steven (upload pending..)
+U15: Philipp
 U14: Steven
 U13: Philipp
 U12: Pascal
