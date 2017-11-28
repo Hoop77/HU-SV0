@@ -1,0 +1,24 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	\section*{Übungsaufgabe 17:}
+		Sei $f(t) = t^2-t +3$ mit $t\in[0,4]$. Sei weiter $F_{app}(t) = c_1t+3$.
+		\begin{align*}
+			e^2(c)	&= \int_0^4 \left[ f(t)-f_{app}(c,t) \right]^2 dt\\
+					&= \int_0^4 \left[ t^2 -t(1+c_1) \right]^2 dt\\
+					&= \int_0^4 t^4 -2t^3(1+c_1) + t^2(1+c_1)^2 dt\\
+					&= \left.\frac{t^5}{5}\right|_0^4 - \left.\frac{t^4}{2}(1+c_1)\right|_0^4 + \left.\frac{t^3}{3}(1+c_1)^2 \right|_0^4\\
+					&= \frac{1472}{15} - \frac{256}{3}c_1 + \frac{64}{3}c_1^2\\
+					&\\
+			0\overset{!}{=} \frac{d}{dc_1} e^2(c)	&= -\frac{256}{3} + \frac{128}{3}c_1\\
+					\Leftrightarrow	\frac{256}{3}	&= \frac{128}{3}c_1\\
+					\Leftrightarrow				c_1	&= 2
+		\end{align*}
+		Das heißt, dass $e^2(c)$ für $c_1 = 2$ mit $e^2(c) = \frac{1572}{3}\approx 98.13$ minimal wird.\\
+		\\
+		Der Unterschied zu Aufgabe 16 besteht daran, dass nicht ein beliebiges Set aus $[0,4]$ gewählt, sondern unendlich viele (mit anderen Worten alle) Paare $(t_n, f_n)$ gewählt werden um den Fehler zu bestimmen. Die 16 selbst würde mit einem randomisierten neuen Set aus 4 Paaren und selber Randbedingung einen anderen Wert ausgeben.
+		
+		\includegraphics[scale = 0.7]{A17_functionPlot.png}
+\end{document}

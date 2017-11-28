@@ -8,7 +8,7 @@ M3.5:
 
 
 History:
-U17: Steven (upload pending..)
+U17: Steven
 U16: Kevin
 U15: Philipp
 U14: Steven
