@@ -1,0 +1,60 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	\section*{Übungsaufgabe 18:}
+	
+	\begin{tabular}{c c | c c c c | c }
+			& n				& 0					& 1			& 2					& \multicolumn{2}{l}{3}\\
+		\cline{2-6}
+			& $t_n$			& -1				& 0			& 1					& \multicolumn{2}{l}{2}\\
+			& $f_n$			& 1					& 0			& 1					& \multicolumn{2}{l}{2}\\
+		m	&$\varphi_m$	&					&			&					&							&$\sum_{n=0}^{N-1}$\\
+		\cline{1-7}	
+		0	& $e^0$			& 1 				& 1			& 1					& 1							& 4\\
+		1	& $e^{t_n}$		& $\frac{1}{e}$		& 1			& $e$				& $e^2$						& 11,47\\
+		2	& $e^{-t_n}$		& $e$				& 1			& $\frac{1}{e}$		& $\frac{1}{e^2}$			& 4,22\\
+		\cdashline{1-7}
+			& $e^{2t_n}$	& $\frac{1}{e^2}$	& 1			& $e^2$				& $e^4$						& 63,12\\
+			& $e^{-2t_n}$	& $e^2$				& 1			& $\frac{1}{e^2}$	& $\frac{1}{e^4}$			& 8,54
+	\end{tabular}\\
+	Mit der folgenden Gleichung
+	\begin{align*}
+		\left(\begin{matrix}
+			a_{00}	&	\dots	& a_{0,m-1}\\
+			\vdots	&			& \vdots\\
+			a_{m-1,0}	&	\dots	& a_{m-1,m-1}
+		\end{matrix}\right)\cdot \left(\begin{matrix}c_0\\\vdots\\c_{m-1}\end{matrix}\right) = 
+		\left(\begin{matrix}
+			\sum_{n=0}^{N-1} \varphi_0(t_n)\cdot f(t_n)\\
+			\vdots\\
+			\sum_{n=0}^{N-1} \varphi_{m-1}(t_n)\cdot f(t_n)\\
+		\end{matrix}\right)
+	\end{align*}
+	mit $a_{i,j}:= \sum_{n=0}^{N-1}\varphi_i(t_n)\cdot \varphi_j(t_n)$ ergibt sich daraus:
+	\begin{align*}
+		\left(\begin{matrix}c_0\\c_1\\c_2\end{matrix}\right) = 
+		\left(\begin{matrix}
+			4		&	11,47	& 4,22\\
+			11,47	&	63,12	& 4\\
+			4,22	&	4		& 8,54
+		\end{matrix}\right)^{-1} \cdot
+		\left(\begin{matrix}
+			2\\
+			17,13\\
+			-2,08\\
+		\end{matrix}\right) \approx 
+		\left(\begin{matrix}
+			0,5\\
+			0,22\\
+			-0,59
+		\end{matrix}\right)
+	\end{align*}
+	Damit ergibt sich für $f_{app}(t) = -0,59 e^{-t}+0,22 e^{t}+0,5$ folgendes Fehlermaß
+	\begin{align*}
+		E^2(c) = \sum_{i=0}^3 \left[ f(t_n) - f_{app}(t_n)\right]^2 = 4,092 + 0,017 + 0,014 + 0,002 = 4,125
+	\end{align*}
+	
+	\includegraphics[scale = 0.8]{A18_functionPlot.png}
+\end{document}
