@@ -1,58 +1,91 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def print_row(start, arr, end, f):
-    row = "" + start
-    for i in len(range(len(arr))):
-        row += "& " + str(arr[i])
-    row += str(end) + "\\\\"
-    print(row, f)
+def approx_matrix(t, f, funs):
+    a = []
+    b = []
+    latex = "\\begin{align*}\n"
+    latex += "\\left(\\begin{matrix}c_0\\\\c_1\\\\c_2\end{matrix}\\right) = \n"
+    latex += "\\left(\\begin{matrix}\n"
+    for fi in funs:
+        latex += "\t"
+        row = []
+        for fj in funs:
+            s = np.sum(fi(t)*fj(t))
+            latex += "{:.2f}".format(s) + " & "
+            row.append(s)
+        latex += "\\\\\n"
+        a.append(row)
+    latex += "\\end{matrix}\\right)^{-1} \\cdot\n"
+    latex += "\\left(\\begin{matrix}\n"
+    for fun in funs:
+        s = np.sum(fun(t)*f)
+        latex += "\t{:.2f}\\\\\n".format(s)
+        b.append(s)
+    latex += "\\end{matrix}\\right) \\approx\n"
+    latex += "\\left(\\begin{matrix}\n"
+    coeffs = np.linalg.solve(a, b)
+    for coeff in coeffs:
+        latex += "\t{:.2f}\\\\\n".format(coeff)
+    latex += "\\end{matrix}\\right)\n"
+    latex += "\\end{align*}\n"
+    f_app = 0.0*t
+    for i, fun in enumerate(funs):
+        f_app += coeffs[i] * fun(t)
+    err = np.sum(np.square(f - f_app))
+    latex += "$f_{app}(t) = "
+    latex += "{:.2f} \\cdot {} ".format(coeffs[0], sfuns[0])
+    for i, sfun in enumerate(sfuns[1:]):
+        latex += "+ {:.2f} \\cdot {} ".format(coeffs[i+1], sfun)
+    latex += "$\n"
+    latex += "\\begin{align*}\n"
+    latex += "\tE^2(c) = \\sum_{i=0}^5 \\left[ f(t_n) - f_{app}(t_n)\\right]^2 = "
+    latex += "{:.02f}\n".format(err)
+    latex += "\\end{align*}\n"
+    return latex, coeffs, err
+
 
 if __name__ == "__main__":
-    t = np.array([-3, -2, 0, 1, 2, 3])
-    f = t^2
-    print("f:")
-    print(f)
-    print("sum cos(0):")
-    print(np.sum(np.cos(0*t)))
-    print("sum cos(t):")
-    print(np.sum(np.cos(t)))
-    print("sum cos(2t):")
-    print(np.sum(np.cos(2*t)))
-    print("sum cos(t)*cos(2t):")
-    print(np.sum(np.cos(t)*np.cos(2*t)))
-    print("sum cos(t)^2:")
-    print(np.sum(np.square(np.cos(t))))
-    print("sum cos(2t)^2:")
-    print(np.sum(np.square(np.cos(2*t))))
-    print()
-    print("right side:")
-    print(np.sum(f))
-    print(np.sum(f*np.cos(t)))
-    print(np.sum(f*np.cos(2*t)))
-
-    print("Solution of equation system:")
-    a = [
-        [6, -1.27, 1.2],
-        [-1.27, 3.6, -0.58],
-        [1.2, -0.58, 3.87]
+    t = np.array([-3, -2, -1, 0, 1, 2, 3])
+    f = np.square(t)
+    # funs = [
+    #     (lambda t: np.cos(0*t)),
+    #     (lambda t: np.cos(t)),
+    #     (lambda t: np.cos(2*t))
+    # ]
+    # sfuns = [
+    #     "cos(0)",
+    #     "cos(t)",
+    #     "cos(2t)"
+    # ]
+    funs = [
+        (lambda t: np.sin(0*t + np.pi/2.0)),
+        (lambda t: np.sin(t)),
+        (lambda t: np.sin(2*t))
     ]
-    b = [1, 5.29, 3.37]
-    coeffs = np.linalg.solve(a, b);
-    print(coeffs)
-
-    print("E^2:")
-    f_app = coeffs[0] * np.cos(0*t) + coeffs[1] * np.cos(t) + coeffs[2] * np.cos(2*t)
-    print(np.sum(np.square(f - f_app)))
+    sfuns = [
+        "sin(\\frac{\\pi}{2}",
+        "sin(t)",
+        "sin(2t)"
+    ]
+    latex, coeffs, err = approx_matrix(t, f, funs)
+    print(latex)
 
     x = np.linspace(min(t) - 1, max(t) + 1, 1000)
-    y = coeffs[0] * np.cos(0*x) + coeffs[1] * np.cos(x) + coeffs[2] * np.cos(2*x)
+    y = 0*x
+    for i, fun in enumerate(funs):
+        y += coeffs[i] * fun(x)
 
-    plt.ylim(min(y) -0.5, max(y) + 0.5)
-    plt.title("Signalapproximation - Aufgabe 19a")
+    min_y = min(y)
+    max_y = max(y)
+    min_f = min(f)
+    max_f = max(f)
+    plt.ylim(min(min_y, min_f) -0.5, max(max_y, max_f) + 0.5)
+    plt.title("Signalapproximation - Aufgabe 19c")
     plt.xlabel("t")
     plt.ylabel("f(t)")
     plt.plot(x, y, label="f(t)=f_app(t)")
     plt.plot(t, f, "ro", label="Diskrete Messwerte")
     plt.legend();
-    plt.show()
+    plt.tight_layout()
+    plt.savefig("../Uebungsaufgaben/A19c2.png")

@@ -3,61 +3,111 @@
 \input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
 
 \begin{document}
-	\begin{landscape}
 	\section*{Übungsaufgabe 19:}
 	a) \newline
-	\begin{tabular}{c c | c c c c c c c }
-			& n	& 0	& 1	& 2	& 3 & 4 & 5 \\
-		\cline{2-9}
-			& $t_n$	& -3 & -2 & 0 & 1 & 2 & 3 \\
-			& $f_n$	& 9 & 4	& 0	& 1 & 4 & 9 \\
-		m & $\varphi_m$	& &	& &	& & & $\sum_{n=0}^{N-1}$\\
-		\cline{1-9}	
-		0 & $cos(0)$ & 1 & 1 & 1 & 1 & 1 & 1 & 6\\
-		1 & $cos(t)$ & $cos(-3)$ & $cos(-2)$ & 1 & $cos(1)$ & $cos(2)$ & $cos(3)$ & -1.27\\
-		2 & $cost(2t)$ & $cos(-6)$ & $cos(-4)$ & 1 & $cos(2)$ & $cos(4)$ & $cos(6)$ & 1.2 \\
-		\cdashline{1-9}
-		& $cos(t) \cdot cos(2t)$ & $cos(-3) \cdot cos(-6)$ & $cos(-2) \cdot cos(-4)$ & 1 & $cos(1) \cdot cos(2)$ & $cos(2) \cdot cos(4)$ & $cos(3) \cdot cos(6)$ & -0.58 \\
-		& $cos(t)^2$ & $cos(-3)^2$ & $cos(-2)^2$ & 1 & $cos(1)^2$ & $cos(2)^2$ & $cos(3)^2$ & 3.6\\
-		& $cos(2t)^2$ & $cos(-6)^2$ & $cos(-4)^2$ & 1 & $cos(2)^2$ & $cos(4)^2$ & $cos(6)^2$ & 3.87\\
-	\end{tabular} \newline \newline
-	Mit der folgenden Gleichung
 	\begin{align*}
-		\left(\begin{matrix}
-			a_{00}	&	\dots	& a_{0,m-1}\\
-			\vdots	&			& \vdots\\
-			a_{m-1,0}	&	\dots	& a_{m-1,m-1}
-		\end{matrix}\right)\cdot \left(\begin{matrix}c_0\\\vdots\\c_{m-1}\end{matrix}\right) = 
-		\left(\begin{matrix}
-			\sum_{n=0}^{N-1} \varphi_0(t_n)\cdot f(t_n)\\
-			\vdots\\
-			\sum_{n=0}^{N-1} \varphi_{m-1}(t_n)\cdot f(t_n)\\
-		\end{matrix}\right)
+	\left(\begin{matrix}c_0\\c_1\\c_2\end{matrix}\right) =
+	\left(\begin{matrix}
+			6.00 & -1.27 & 1.20 & \\
+			-1.27 & 3.60 & -0.58 & \\
+			1.20 & -0.58 & 3.87 & \\
+	\end{matrix}\right)^{-1} \cdot
+	\left(\begin{matrix}
+			27.00\\
+			-20.61\\
+			11.64\\
+	\end{matrix}\right) \approx
+	\left(\begin{matrix}
+			3.31\\
+			-4.34\\
+			1.33\\
+	\end{matrix}\right)
 	\end{align*}
-	mit $a_{i,j}:= \sum_{n=0}^{N-1}\varphi_i(t_n)\cdot \varphi_j(t_n)$ ergibt sich daraus:
+	$f_{app}(t) = 3.31 \cdot cos(0) + -4.34 \cdot cos(t) + 1.33 \cdot cos(2t) $
 	\begin{align*}
-		\left(\begin{matrix}c_0\\c_1\\c_2\end{matrix}\right) = 
-		\left(\begin{matrix}
-			6 &	-1.27 & 1.2\\
-			-1.27 & 3.6 & -0.58\\
-			1.2 &	-0.58 & 3.87
-		\end{matrix}\right)^{-1} \cdot
-		\left(\begin{matrix}
-			1\\
-			5.29\\
-			3.37\\
-		\end{matrix}\right) \approx 
-		\left(\begin{matrix}
-			0.33\\
-			1.75\\
-			1.03
-		\end{matrix}\right)
+			E^2(c) = \sum_{i=0}^5 \left[ f(t_n) - f_{app}(t_n)\right]^2 = 0.58
 	\end{align*}
-	Damit ergibt sich für $f_{app}(t) = 1.03 \cdot cos(2t)+1.75 \cdot cos(t)+0.33 \cdot cos(0)$ folgendes Fehlermaß
+
+	\includegraphics[scale=0.8]{A19a.png}
+
+	b) \newline
 	\begin{align*}
-		E^2(c) = \sum_{i=0}^5 \left[ f(t_n) - f_{app}(t_n)\right]^2 = 17.93
+	\left(\begin{matrix}c_0\\c_1\\c_2\end{matrix}\right) =
+	\left(\begin{matrix}
+			6.00 & 0.84 & 0.91 & \\
+			0.84 & 2.40 & -0.69 & \\
+			0.91 & -0.69 & 2.13 & \\
+	\end{matrix}\right)^{-1} \cdot
+	\left(\begin{matrix}
+			27.00\\
+			0.84\\
+			0.91\\
+	\end{matrix}\right) \approx
+	\left(\begin{matrix}
+			5.18\\
+			-2.18\\
+			-2.50\\
+	\end{matrix}\right)
 	\end{align*}
-	
-	\includegraphics[scale=0.4]{A19a.png}
-	\end{landscape}
+	$f_{app}(t) = 5.18 \cdot sin(\frac{\pi}{2}) + -2.18 \cdot sin(t) + -2.50 \cdot sin(2t) $
+	\begin{align*}
+			E^2(c) = \sum_{i=0}^5 \left[ f(t_n) - f_{app}(t_n)\right]^2 = 59.13
+	\end{align*}
+
+	\includegraphics[scale=0.8]{A19b.png}
+
+	c) \newline
+	zu a) Punkt (-1,1) hinzugefügt: \newline
+	\begin{align*}
+	\left(\begin{matrix}c_0\\c_1\\c_2\end{matrix}\right) =
+	\left(\begin{matrix}
+			7.00 & -0.73 & 0.78 & \\
+			-0.73 & 3.89 & -0.81 & \\
+			0.78 & -0.81 & 4.04 & \\
+	\end{matrix}\right)^{-1} \cdot
+	\left(\begin{matrix}
+			28.00\\
+			-20.07\\
+			11.22\\
+	\end{matrix}\right) \approx
+	\left(\begin{matrix}
+			3.41\\
+			-4.25\\
+			1.27\\
+	\end{matrix}\right)
+	\end{align*}
+	$f_{app}(t) = 3.41 \cdot cos(0) + -4.25 \cdot cos(t) + 1.27 \cdot cos(2t) $\begin{align*}
+			E^2(c) = \sum_{i=0}^5 \left[ f(t_n) - f_{app}(t_n)\right]^2 = 0.82
+	\end{align*}
+
+	\includegraphics[scale=0.8]{A19c1.png}
+
+	zu b) Punkt (-1,1) hinzugefügt: \newline
+	\begin{align*}
+	\left(\begin{matrix}c_0\\c_1\\c_2\end{matrix}\right) =
+	\left(\begin{matrix}
+			7.00 & 0.00 & 0.00 & \\
+			0.00 & 3.11 & 0.08 & \\
+			0.00 & 0.08 & 2.96 & \\
+	\end{matrix}\right)^{-1} \cdot
+	\left(\begin{matrix}
+			28.00\\
+			0.00\\
+			0.00\\
+	\end{matrix}\right) \approx
+	\left(\begin{matrix}
+			4.00\\
+			0.00\\
+			-0.00\\
+	\end{matrix}\right)
+	\end{align*}
+	$f_{app}(t) = 4.00 \cdot sin(\frac{\pi}{2} + 0.00 \cdot sin(t) + -0.00 \cdot sin(2t) $\begin{align*}
+			E^2(c) = \sum_{i=0}^5 \left[ f(t_n) - f_{app}(t_n)\right]^2 = 84.00
+	\end{align*}
+
+	\includegraphics[scale=0.8]{A19c2.png}
+
+	Zusammenfassung: \newline
+	Während in a) sich kaum etwas am quadratischen Fehler sowie der Approximationsfunktion ändert, verändert sich die Approximationsfunktion in c) zu einer konstanten Funktion.
+
 \end{document}
