@@ -1,0 +1,17 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+    \section*{Übungsaufgabe 21}
+    \begin{align*}
+        \int_{-1}^{1} t_n t_n^2 \, dt = \left[ \frac{t^4}{4} \right]_{-1}^{1} = 0
+    \end{align*}
+    $t_n \cdot t_n^2$ ist ungerade. Für symmetrische Grenzen verschwindet die Fläche unterm untegeraden Integral.
+    \begin{align*}
+        \sum_{n=0}^{N-1} t_n \cdot t_n^2 &= -1 \cdot (-1)^2 + -0.5 \cdot (-0.5)^2 + 0 \cdot 0^2 + 0.5 \cdot 0.5^2 + 1 \cdot 1^2
+            & = 0
+    \end{align*}
+    Die Basisfunktionen sind orthogonal.
+\end{document}
+

@@ -1,7 +1,7 @@
 Open Tasks:
 
-U20: 
-U21: 
+U20: Kevin 
+U21: Pascal
 
 M4.4:
 M4.5:
