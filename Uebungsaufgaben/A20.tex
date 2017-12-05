@@ -1,0 +1,63 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+    \section*{Übungsaufgabe 20}
+    Messerte: \\
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        $\mathbf{n}$   & 0 & 1 & 2 & 3   & 4 & 5 \\
+        \hline
+        $\mathbf{t_n}$ & 0 & 1 & 2 & 3   & 4 & 5 \\
+        \hline
+        $\mathbf{f_n}$ & 2 & 4 & 3 & 3.5 & 5 & 4 \\
+        \hline
+    \end{tabular} \\
+    Wir wollen die Funktion $f_{ap}(t) = c_2 t^2 + c_1 t + c_0$ aufstellen.
+    \begin{align*}
+        \begin{bmatrix}
+            \sum_{n=0}^{5} t_n^{0} t_n^{0} &
+            \sum_{n=0}^{5} t_n^{0} t_n^{1} &
+            \sum_{n=0}^{5} t_n^{0} t_n^{2} \\
+            \sum_{n=0}^{5} t_n^{1} t_n^{0} &
+            \sum_{n=0}^{5} t_n^{1} t_n^{1} &
+            \sum_{n=0}^{5} t_n^{1} t_n^{2} \\
+            \sum_{n=0}^{5} t_n^{2} t_n^{0} &
+            \sum_{n=0}^{5} t_n^{2} t_n^{1} &
+            \sum_{n=0}^{5} t_n^{2} t_n^{2} \\
+        \end{bmatrix}
+        \begin{bmatrix}
+            c_{0} \\
+            c_{1} \\
+            c_{2} \\
+        \end{bmatrix}
+        &=
+        \begin{bmatrix}
+            \sum_{n=0}^{5} f_n t_n^{0}\\
+            \sum_{n=0}^{5} f_n t_n^{1}\\
+            \sum_{n=0}^{5} f_n t_n^{2}\\
+        \end{bmatrix}
+        \\
+        6 c_{0} +
+        15 c_{1} +
+        55 c_{2} &=
+        9\\
+        15 c_{0} +
+        55 c_{1} +
+        225 c_{2} &=
+        10\\
+        55 c_{0} +
+        225 c_{1} +
+        979 c_{2} &=
+        16\\
+    \end{align*}
+    Lösen (zB. mittels Gauß-Algorithmus) ergibt: $c_0 = \frac{41}{14} c_1 = -\frac{5}{28} c_2 = -\frac{3}{28}$ \\
+    Als quadratischer Fehler ergibt sich dann:
+    \begin{align*}
+        E^2(c) &= \sum_{n=0}^{5} \left[ f_n - c_0 t_n^0 - c_1 t_n^1 - c_2 t_n^2 \right]^2 \\
+               &= \sum_{n=0}^{5} \left[ f_n - \frac{41}{14} + \frac{5}{28} t_n + \frac{3}{28} t_n^2 \right]^2 \\
+        \textit{Einsetzen: } \; &\approx 60.65 
+    \end{align*}
+\end{document}
+
