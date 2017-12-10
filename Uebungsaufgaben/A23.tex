@@ -1,0 +1,37 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	Aufgabe 23)\\
+	 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		$\mathbf{n}$   & 0 & 1 & 2 & 3   & 4 & 5 & 6 & 7 & 8 \\
+		\hline
+		$\mathbf{t_n}$ & 0 & 1 & 2 & 3   & 4 & 5 & 6 & 7 & 8 \\
+		\hline
+		$\mathbf{f_n}$ & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1\\
+		\hline
+	\end{tabular} \\
+	\includegraphics{A23_plot.png}\\
+	$T_0 = 3, \omega _0 = \frac{2\pi}{3}$\\
+	$\phi _0 = 1, \phi _1 = cos(\omega _0t) = cos(\frac{2\pi t}{3}), \phi _2 = sin(\omega _0t) = sin(\frac{2\pi t}{3})$\\
+	
+	\begin{tabular}{|c|c|}
+		\hline
+		$\mathbf{a_0}$   & 1  \\
+		\hline
+		$\mathbf{a_1}$ 	& 0.5  \\
+		\hline
+		$\mathbf{c_0}$   & 0.5  \\
+		\hline
+		$\mathbf{c_1}$ & 0.5+j0.144  \\
+		\hline
+		$\mathbf{c_1^*}$ & 0.25-j0.144  \\
+		\hline
+	\end{tabular} \\\\
+	Ann\"ahrungsfunktion: \\
+
+	$e^2$ ist genau 0, weil die Anzahl der Messwerte in einer einzelnen Periodendauern N genau gleich der Anzahl der Basisfunktionen m ist (beides = 3).
+	
+\end{document}
