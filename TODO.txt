@@ -3,11 +3,7 @@ Open Tasks:
 U22: 
 U23: 
 
-M4.4:
-M4.5:
-M4.6:
-M4.7:
-
+M4.7: Kevin
 
 
 History:
@@ -27,6 +23,9 @@ U09: Philipp
 U08: Steven
 U07: Kevin
 
+M4.4: Kevin
+M4.5: Kevin
+M4.6: Kevin
 M4.1 Philipp + Steven
 M4.2 Philipp + Steven
 M4.3 Philipp + Steven
