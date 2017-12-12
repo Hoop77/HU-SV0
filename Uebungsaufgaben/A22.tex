@@ -1,0 +1,31 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	\section*{Aufgabe 22}
+		Sei $s(t) = \sin(2\pi\cdot t)$ und $c(t) = \cos(2\pi\cdot t)$.\\
+		Zwei Funktion $f,g:\R\to\R$ sind auf einem Intervall $[l,r]\subset\R$ orthogonal, wenn $\int_l^rf(x)g(x)dx = 0$ gilt.\\
+		\\
+		Sei weiter o.B.d.A. $[a,b]\subset \R, a < b$, bel. und $\lambda$ das Standard-Lebesgue-Maß, dann gilt:
+		\begin{align*}
+			\int_{[a,b]} s(t)c(t)\lambda(dt) =\ & \int_{[a,b]}\sin(2\pi\cdot t)\cos(2\pi\cdot t)\lambda(dt)\\
+			=\ & \left[\frac{1}{8\pi}-\frac{\cos(4\pi\cdot t)}{8\pi}\right]_a^b\\
+			=\ & \frac{1}{8\pi}-\frac{\cos(4\pi\cdot a)}{8\pi}-\frac{1}{8\pi}+\frac{\cos(4\pi\cdot b)}{8\pi}\\
+			=\ & \frac{\cos(4\pi\cdot a) - \cos(4\pi\cdot b)}{8\pi}\overset{!}{=} 0\\
+			\Leftrightarrow\ & \cos(4\pi\cdot a) - \cos(4\pi\cdot b) \overset{!}{=} 0\\
+			\Leftrightarrow\ & \cos(4\pi\cdot a) \overset{!}{=} \cos(4\pi\cdot b)\\
+			\Leftrightarrow\ & \cos(4\pi\cdot a) \overset{!}{=} \cos(4\pi\cdot b + 2k\pi)	& k\in\Z\text{ (Periodizitätseigenschaft)}\\
+			\Leftarrow\	& 4\pi \cdot a \overset{!}{=} -4\pi\cdot b - 2k\pi& \cos \text{ (Achsensymmetrie)}\\
+			\Leftarrow\	& 4\pi \cdot a \overset{!}{=} 4\pi\cdot \left(-b  -\frac{k}{2}\right)\\
+			\Leftrightarrow\ & a \overset{!}{=} -b  -\frac{k}{2}\\
+			\Leftrightarrow\ & b \overset{!}{=} -a  -\frac{k}{2}
+		\end{align*}
+		Das heißt, falls $b = -a  -\frac{k}{2}$ für $k\in\Z$ bel., so ist das Integral
+		$$\int_{[a,b]}\sin(2\pi\cdot t)\cos(2\pi\cdot t) \lambda(dt) = 0$$
+		auf dem Intervall $[a,b]$.
+		Daraus folgt, dass mit
+		$$\Gamma := \left\lbrace [a,b]\subset \R \left| a\in\R, k\in\Z: b = -a  -\frac{k}{2} \right.\right\rbrace$$
+		gilt 
+		$$\forall G\in \Gamma:\int_G\sin(2\pi\cdot t)\cos(2\pi\cdot t) \lambda(dt) = 0.$$
+\end{document}
