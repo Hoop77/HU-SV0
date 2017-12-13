@@ -5,9 +5,8 @@ U25:
 U26: 
 U27: 
 
-M4.7: Kevin
-M5.1: 
-M5.2: 
+M5.1: Philipp
+M5.2: Philipp
 M5.3: 
 M5.4: 
 
@@ -31,6 +30,7 @@ U09: Philipp
 U08: Steven
 U07: Kevin
 
+M4.7: Steven
 M4.6: Kevin
 M4.5: Kevin
 M4.4: Kevin

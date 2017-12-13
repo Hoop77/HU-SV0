@@ -1,6 +1,12 @@
-function y = swal(k)
-    % 1 stelle k als binaerzahl dar
-    b = dec2bin(k);
+function y = swal(k, varargin)
+    % 1 stelle k als binaerzahl dar mit n Stellen
+    b = [];
+    if nargin > 1
+        n = varargin{1};
+        b = dec2bin(k, n);
+    else
+        b = dec2bin(k);
+    end
     v = [1];
     for i = b
         if i == '0'
