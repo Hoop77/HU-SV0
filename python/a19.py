@@ -46,8 +46,8 @@ def approx_matrix(t, f, funs):
 
 
 if __name__ == "__main__":
-    t = np.array([-3, -2, -1, 0, 1, 2, 3])
-    f = np.square(t)
+    t = np.array([-1, 0, 1, 2])
+    f = np.abs(t)
     # funs = [
     #     (lambda t: np.cos(0*t)),
     #     (lambda t: np.cos(t)),
@@ -58,15 +58,25 @@ if __name__ == "__main__":
     #     "cos(t)",
     #     "cos(2t)"
     # ]
+    # funs = [
+    #     (lambda t: np.sin(0*t + np.pi/2.0)),
+    #     (lambda t: np.sin(t)),
+    #     (lambda t: np.sin(2*t))
+    # ]
+    # sfuns = [
+    #     "sin(\\frac{\\pi}{2}",
+    #     "sin(t)",
+    #     "sin(2t)"
+    # ]
     funs = [
-        (lambda t: np.sin(0*t + np.pi/2.0)),
-        (lambda t: np.sin(t)),
-        (lambda t: np.sin(2*t))
+        (lambda t: np.exp(t*0)),
+        (lambda t: np.exp(t)),
+        (lambda t: np.exp(t*(-1)))
     ]
     sfuns = [
-        "sin(\\frac{\\pi}{2}",
-        "sin(t)",
-        "sin(2t)"
+        "e^0",
+        "e^t",
+        "e^{-t}"
     ]
     latex, coeffs, err = approx_matrix(t, f, funs)
     print(latex)
@@ -88,4 +98,5 @@ if __name__ == "__main__":
     plt.plot(t, f, "ro", label="Diskrete Messwerte")
     plt.legend();
     plt.tight_layout()
-    plt.savefig("../Uebungsaufgaben/A19c2.png")
+    #plt.savefig("../Uebungsaufgaben/A19c2.png")
+    plt.show()
