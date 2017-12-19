@@ -9,5 +9,23 @@
 		$\omega_0 = 2\pi$\\
 		Tastgrad $= \frac{\text{Impulsdauer}}{T_0} = \frac{2d}{T_0} = 0.4$\\
 		Gleichanteil $= \int_{a}^{a+T_0} f(t) dt = 0.4$\\
-		Entwicklungsintervall $=$ \glqq sicheres Orthogonalitätsintervall\grqq\ $= \left[-\frac{T_0}{2},\frac{T_0}{2}\right]$
+		Entwicklungsintervall $=$ \glqq sicheres Orthogonalitätsintervall\grqq\ $= \left[-\frac{T_0}{2},\frac{T_0}{2}\right]$\\
+        %
+        Die approximierte Funktion ergibt sich durch:
+        \begin{align*}
+            f_{ap}(t) &= \frac{a_0}{2} + \sum_{k=1}^\infty \left(a_k \cdot \cos(2\pi \omega_0 t) + b_k \cdot \sin(2\pi \omega_0 t)\right) \\
+            \text{mit:} \\
+            a_k &= 2 \int_{0}^{1} f(t) \cos(2\pi k t) \, \text{d}t = 2 \int_{0}^{0.2} \cos(2\pi k t) \, \text{d}t = 2 \left[ \frac{\sin(2\pi k t)}{2\pi k} + C_0 \right]_0^{0.2} \\
+            b_k &= 2 \int_{0}^{1} f(t) \sin(2\pi k t) \, \text{d}t = 2 \int_{0}^{0.2} \sin(2\pi k t) \, \text{d}t = 2 \left[ \frac{-\cos(2\pi k t)}{2\pi k} + C_1 \right]_0^{0.2}
+        \end{align*}
+        % 
+        \begin{figure}
+            \includegraphics[width=\textwidth]{A25_plot.png}
+            \caption{Darstellung für verschiedene $k$ im Intervall $t = 0 \dots 0.4$}
+        \end{figure}
+        %
+        \begin{figure}
+            \includegraphics[width=\textwidth]{A25_plot2.png}
+            \caption{Linienspektrum für verschiedene Tastgrade}
+        \end{figure}
 \end{document}
