@@ -13,6 +13,7 @@
 
 import sys
 from subprocess import call
+from datetime import datetime
 
 BEGIN_DOCUMENT = "\\begin{document}"
 END_DOCUMENT = "\\end{document}"
@@ -24,7 +25,8 @@ def get_exercises():
     return [int(exercise) for exercise in exercises_str]
 
 def get_tex_filename(exercises):
-    tex_filename = str(exercises[0])
+    date_str = datetime.strftime(datetime.now(), "%Y-%m-%d")
+    tex_filename = date_str + "_printVersion_" + str(exercises[0])
     for i in range(1, len(exercises)):
         tex_filename += "-" + str(exercises[i])
     return tex_filename + ".tex"
