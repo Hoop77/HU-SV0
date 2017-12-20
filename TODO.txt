@@ -1,17 +1,15 @@
 Open Tasks:
 
-U24: Steven
-U25: Kevin 
-U26: 
 U27: 
 
-M5.1: Philipp
-M5.2: Philipp
 M5.3: 
 M5.4: 
 
 
-History:
+push-History:
+U26: Philipp
+U25: Kevin
+U24: Steven
 U23: Steven
 U22: Steven
 U21: Kevin
@@ -30,6 +28,8 @@ U09: Philipp
 U08: Steven
 U07: Kevin
 
+M5.2: Philipp
+M5.1: Philipp
 M4.7: Steven
 M4.6: Kevin
 M4.5: Kevin
