@@ -1,20 +1,28 @@
 Open Tasks:
 
+<<<<<<< HEAD
 U28: 
 U29: 
 U30: 
 U31 (Prüfungsfrage): 
+=======
+U27: 
+>>>>>>> ea046c77a6318f608a368e88476f556394c1c6da
 
-M5.1: Philipp
-M5.2: Philipp
 M5.3: 
 M5.4: 
 
 
+<<<<<<< HEAD
 History:
 U27: -
 U26: Philipp
 U25: Kevin 
+=======
+push-History:
+U26: Philipp
+U25: Kevin
+>>>>>>> ea046c77a6318f608a368e88476f556394c1c6da
 U24: Steven
 U23: Steven
 U22: Steven
@@ -34,6 +42,8 @@ U09: Philipp
 U08: Steven
 U07: Kevin
 
+M5.2: Philipp
+M5.1: Philipp
 M4.7: Steven
 M4.6: Kevin
 M4.5: Kevin
