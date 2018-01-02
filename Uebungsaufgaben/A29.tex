@@ -1,0 +1,34 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	\section*{Übungsaufgabe 29:}
+		Sei $f(t) = 3t\cdot e^{-2t}, t\ge 0$.\\
+		\includegraphics[scale = 0.7]{A29_graphPlot.png}\\
+		\\
+		Sei weiter $g(t) = t\cdot e^{-2t}, t\ge 0$ und $h(t)=e^{-2t}, t\ge 0$.\\
+		Dann gilt:
+		$$ f(t) = 3\cdot g(t) = 3t \cdot h(t),\quad t\ge 0$$
+		Dann gilt nach den tabellierten Fouriertransformierten vom Arbeitsblatt das folgende:\\
+		\begin{tabular}{c | c | l | l}
+			Zeile	&	 Name	&	Signal			&	Fouiertransformierte\\
+			\hline
+			1		&	$f(t)$	&	$3 \cdot g(t)$	&	$3\cdot G(\omega)$\\
+			5		&	$g(t)$	&	$t \cdot h(t)$	&	$j\cdot \frac{d}{d\omega}H(\omega)$\\
+			D		&	$h(t)$	&	$e^{-t}$		&	$\frac{1}{a+j\omega}$
+		\end{tabular}\\
+		Das heißt für die Fouiertransformierte $F(\omega)$ gilt:
+		$$F(\omega) = 3\cdot \left(j\cdot \frac{d}{d\omega}\left(1+j\omega\right)^{-1}\right) = 3\left(j^2\cdot -\left(1+j\omega\right)^{-2}\right) = \frac{3}{(1+jw)^2}$$
+		Mit folgenden Graphen:\\
+		\begin{figure}[h]
+			\centering
+			\caption{Plot des Real- (blau) und Imaginäranteils (rot)}
+			\includegraphics[width = 0.85\textwidth]{A29_plot-real-imag.png}
+		\end{figure}
+		\begin{figure}[h]
+			\centering
+			\caption{Plot des Betrags (blau) und des Winkels (rot) in [$\pi$]}
+			\includegraphics[width= 0.85\textwidth]{A29_plot-abs-angle.png}
+		\end{figure}
+\end{document}
