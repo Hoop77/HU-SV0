@@ -8,6 +8,7 @@
 		\includegraphics[scale = 0.7]{A29_graphPlot.png}\\
 		\\
 		Sei weiter $g(t) = t\cdot e^{-2t}, t\ge 0$ und $h(t)=e^{-2t}, t\ge 0$.\\
+		Da der Faktor $t$ in der Transformierten $F(\omega)$ nicht mehr auftaucht, ist die Transformierte von $f(t)$ der von Aufgabe 29 ähnlich. Insbesondere wird $F(\omega)$ durch den Faktor 3 gestreckt. Daher gilt die Schätzung: $F(0) = 3$\\
 		Dann gilt:
 		$$ f(t) = 3\cdot g(t) = 3t \cdot h(t),\quad t\ge 0$$
 		Dann gilt nach den tabellierten Fouriertransformierten vom Arbeitsblatt das folgende:\\
@@ -16,10 +17,10 @@
 			\hline
 			1		&	$f(t)$	&	$3 \cdot g(t)$	&	$3\cdot G(\omega)$\\
 			5		&	$g(t)$	&	$t \cdot h(t)$	&	$j\cdot \frac{d}{d\omega}H(\omega)$\\
-			D		&	$h(t)$	&	$e^{-t}$		&	$\frac{1}{a+j\omega}$
+			D		&	$h(t)$	&	$e^{-t}$		&	$\frac{1}{1+j\omega}$
 		\end{tabular}\\
 		Das heißt für die Fouiertransformierte $F(\omega)$ gilt:
-		$$F(\omega) = 3\cdot \left(j\cdot \frac{d}{d\omega}\left(1+j\omega\right)^{-1}\right) = 3\left(j^2\cdot -\left(1+j\omega\right)^{-2}\right) = \frac{3}{(1+jw)^2}$$
+		$$F(\omega) = 3\cdot \left(j\cdot \frac{d}{d\omega}\left(1+j\omega\right)^{-1}\right) = 3\left(-\left(1+j\omega\right)^{-2}\cdot j^2\right) = \frac{3}{(1+jw)^2}$$
 		Mit folgenden Graphen:\\
 		\begin{figure}[h]
 			\centering
@@ -30,5 +31,10 @@
 			\centering
 			\caption{Plot des Betrags (blau) und des Winkels (rot) in [$\pi$]}
 			\includegraphics[width= 0.85\textwidth]{A29_plot-abs-angle.png}
+		\end{figure}
+		\begin{figure}
+			\centering
+			\caption{Niquest-Plot von $F(\omega)$ mit $\omega\in[-4,4]$}
+			\includegraphics[width=\textwidth]{A29_niquest-plot.png}
 		\end{figure}
 \end{document}

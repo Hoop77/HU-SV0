@@ -1,6 +1,5 @@
 Open Tasks:
 
-U29: Steven (1/2)
 U30: 
 U31 (Prüfungsfrage): 
 
@@ -9,6 +8,7 @@ M5.4:
 
 
 History:
+U29: Steven
 U28: Steven
 U27: -
 U26: Philipp
