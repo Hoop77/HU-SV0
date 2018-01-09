@@ -1,0 +1,12 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	\section*{Übungsaufgabe 30:}
+		Sei $f(t) = 3t\cdot e^{-2t}, t\ge 0$.
+        Als diskrete Funktion mit Abtastintervall $T_A = \frac{1}{8}$, mit $N = 64$ Samples, wählen wir: $f_n = f(n \cdot T_A)$. \\
+        \includegraphics[width=\textwidth]{A30_Fn.png} \\
+        Nach der diskreten Fourier-Transformation ergibt sich folgendes Betragsspektrum: \\
+        \includegraphics[width=\textwidth]{A30_Abs.png}
+\end{document}
