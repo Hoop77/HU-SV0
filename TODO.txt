@@ -3,10 +3,6 @@ Open Tasks:
 U30: Kevin 
 U31 (Prüfungsfrage): 
 
-M5.3: 
-M5.4: 
-
-
 History:
 U29: Steven
 U28: Steven
@@ -32,6 +28,8 @@ U09: Philipp
 U08: Steven
 U07: Kevin
 
+M5.4: Philipp
+M5.3: Philipp
 M5.2: Philipp
 M5.1: Philipp
 M4.7: Steven
