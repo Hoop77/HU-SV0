@@ -6,8 +6,8 @@ N = numel(fn);
 if 2*K + 1 > N
    error("2K+1 > N"); 
 end
-fn = transpose(fn(:));  % zeilenvektor
-n = transpose(0:(N-1)); % spaltenvektor
+fn = transpose(fn(:));  % Zeilenvektor
+n = transpose(0:(N-1)); % Spaltenvektor
 kv = 0:K;
 a = zeros(1, K+1);
 b = zeros(1, K+1);

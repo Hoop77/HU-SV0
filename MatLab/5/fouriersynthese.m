@@ -7,6 +7,10 @@ if 2*K + 1 > N
    error("2K+1 > N"); 
 end
 
+% zu Zeilenvektoren
+ak = transpose(ak(:));
+bk = transpose(bk(:));
+
 k = transpose(1:K);
 a0 = ak(1);
 nv = 0:(N-1);
