@@ -1,10 +1,9 @@
 Open Tasks:
 
-U32: 
-U33:
-U34:
-
 History:
+U34: Philipp
+U33: Philipp
+U32: Philipp
 U31 (Prüfungsfrage): -
 U30: Kevin 
 U29: Steven

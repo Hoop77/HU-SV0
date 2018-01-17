@@ -1,0 +1,52 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	\section*{Übungsaufgabe 32:}
+	
+	$
+	DWT =
+	\begin{bmatrix}
+	0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & \\
+	0.35 & 0.35 & 0.35 & 0.35 & -0.35 & -0.35 & -0.35 & -0.35 & \\
+	0.35 & 0.35 & -0.35 & -0.35 & -0.35 & -0.35 & 0.35 & 0.35 & \\
+	0.35 & 0.35 & -0.35 & -0.35 & 0.35 & 0.35 & -0.35 & -0.35 & \\
+	0.35 & -0.35 & -0.35 & 0.35 & 0.35 & -0.35 & -0.35 & 0.35 & \\
+	0.35 & -0.35 & -0.35 & 0.35 & -0.35 & 0.35 & 0.35 & -0.35 & \\
+	0.35 & -0.35 & 0.35 & -0.35 & -0.35 & 0.35 & -0.35 & 0.35 & \\
+	0.35 & -0.35 & 0.35 & -0.35 & 0.35 & -0.35 & 0.35 & -0.35 & \\
+	\end{bmatrix}
+	$ \\ $
+	s' =
+	\begin{bmatrix}
+	1.41 & 3.54 & 0.0 & -0.71 & -0.71 & -1.41 & 0.71 & 0.0 & \\
+	\end{bmatrix}
+	^T $ \\ $
+	s = DWT \cdot s' =
+	\begin{bmatrix}
+	1.0 & 2.0 & 3.0 & 1.0 & -1.0 & -1.0 & -1.0 & -0.0 & \\
+	\end{bmatrix}
+	^T $ \\ $
+	s = DWT^T \cdot s' =
+	\begin{bmatrix}
+	1.0 & 2.0 & 3.0 & 1.0 & -1.0 & -1.0 & -1.0 & -0.0 & \\
+	\end{bmatrix}
+	^T $ \\ $
+	s = DWT^* \cdot s'* =
+	\begin{bmatrix}
+	1.0 & 2.0 & 3.0 & 1.0 & -1.0 & -1.0 & -1.0 & -0.0 & \\
+	\end{bmatrix}
+	^T $ \\ $
+	s = DWT^{-1} \cdot s' =
+	\begin{bmatrix}
+	1.0 & 2.0 & 3.0 & 1.0 & -1.0 & -1.0 & -1.0 & -0.0 & \\
+	\end{bmatrix}
+	^T $ \\\\
+	$
+	det(DWT) = 1.0\\
+	$
+	symmetrisch: ja \\
+	orthogonal: ja
+
+\end{document}
