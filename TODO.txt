@@ -1,11 +1,11 @@
 Open Tasks:
-U35: Kevin 
 U36: 
 U37: 
 U38: 
 U39: 
 
 History:
+U35: Kevin 
 U34: Philipp
 U33: Philipp
 U32: Philipp
