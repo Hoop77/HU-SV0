@@ -1,0 +1,41 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	\section*{Übungsaufgabe 35:}
+
+    $
+    \textbf{DFT} = \begin{bmatrix}
+        0.5 & 0.5  & 0.5   &  0.5 \\
+        0.5 & -0.5j & -0.5 &  0.5j \\
+        0.5 & -0.5 & 0.5   & -0.5 \\
+        0.5 & 0.5j & -0.5  & -0.5j
+    \end{bmatrix}$
+
+    Da ${\textbf{DFT}^T}^{*} = \textbf{DFT}^{-1}$ gilt und, weil $\textbf{DFT}$ symmetrisch ist, gilt:
+    \[{\textbf{DFT}^T}^{*} = \textbf{DFT}^{*} = \begin{bmatrix}
+        0.5 & 0.5   & 0.5  &  0.5 \\
+        0.5 & 0.5j  & -0.5 & -0.5j \\
+        0.5 & -0.5  & 0.5  & -0.5 \\
+        0.5 & -0.5j & -0.5 & 0.5j
+    \end{bmatrix} = \textbf{DFT}^{-1}\]
+
+    $s = (1, 2, 3, 1)^T$ transformieren mit $\textbf{DFT}$ ergibt:
+    \[
+        \textbf{DFT}s = (3.5, -1 - 0.5j, 0.5, -1 + 0.5j)^T
+    \]
+
+    Zurücktransformation mittels $\textbf{DFT}^{-1}$ ergibt:
+    \[
+        \textbf{DFT}^{-1} (3.5, -1 - 0.5j, 0.5, -1 + 0.5j)^T = (1, 2, 3, 1)^T = s
+    \]
+    \begin{figure}[h]
+        \includegraphics[width=\textwidth]{re_spectrum.png}
+        \caption{Realteilspektrum}
+    \end{figure}
+    \begin{figure}[h]
+        \includegraphics[width=\textwidth]{im_spectrum.png}
+        \caption{Imaginärteilspektrum}
+    \end{figure}
+\end{document}
