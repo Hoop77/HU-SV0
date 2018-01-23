@@ -1,4 +1,4 @@
-Function H = Haar(Rg)
+function H = Haar(Rg)
     v1 = [1 1];
     v2 = [1 - 1];
     H = [v1; v2];
