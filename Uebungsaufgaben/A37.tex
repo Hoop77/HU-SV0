@@ -1,0 +1,38 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	\section*{Übungsaufgabe 37:}
+
+	$
+    DHT =
+    \begin{bmatrix}
+    0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & \\
+    0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & \\
+    0.5 & 0.5 & 0.5 & 0.5 & -0.5 & -0.5 & -0.5 & -0.5 & \\
+    0.71 & 0.71 & -0.71 & -0.71 & 0.0 & 0.0 & 0.0 & 0.0 & \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.71 & 0.71 & -0.71 & -0.71 & \\
+    1.0 & -1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & \\
+    0.0 & 0.0 & 1.0 & -1.0 & 0.0 & 0.0 & 0.0 & 0.0 & \\
+    0.0 & 0.0 & 0.0 & 0.0 & 1.0 & -1.0 & 0.0 & 0.0 & \\
+    \end{bmatrix}
+    $ \\ $
+    s' =
+    \begin{bmatrix}
+    1.41 & 1.41 & 5.0 & -0.71 & -0.71 & -1.0 & 2.0 & 0.0 & \\
+    \end{bmatrix}
+    ^T $ \\ $
+    s = DHT \cdot s' =
+    \begin{bmatrix}
+    2.0 & 4.0 & 6.0 & 2.0 & -2.0 & -2.0 & -1.0 & -1.0 & \\
+    \end{bmatrix}
+    ^T $ \newline
+
+    Hier wurde der Algorithmus im Buch verwendet. Leider scheint bei der Rücktransformation nicht wieder das originale Signal herauszukommen.
+    Dies ist unsere Implementation in Python: \newline
+    \lstinputlisting[language=Python]{A37.py}
+
+
+
+\end{document}
