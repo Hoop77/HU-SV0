@@ -1,11 +1,13 @@
 Open Tasks:
-U36: Steven (upload nach Bugfix)
-U39: 
+U40: Steven
+U41: Philipp
+U42: Steven
 
 History:
+U39: -
 U38: Philipp
 U37: Philipp
-
+U36: Steven (upload nach Bugfix)
 U35: Kevin 
 U34: Philipp
 U33: Philipp
