@@ -1,7 +1,11 @@
 Open Tasks:
-U39: 
+U40: 
+U41: 
+U42: 
+U43: 
 
 History:
+U39: -
 U38: Philipp
 U37: Philipp
 U36: Steven (hacked)

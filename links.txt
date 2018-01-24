@@ -6,3 +6,6 @@ https://www2.informatik.hu-berlin.de/~hochmuth/download
 /epsd.htm
 /parabel.htm
 /freihe.htm
+
+Bis U39:
+/dot.htm
