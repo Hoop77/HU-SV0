@@ -1,0 +1,15 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	\section*{Übungsaufgabe 36:}
+		\includegraphics[width = \textwidth]{A36_Zeit-App-Plot.png}
+		Für die Frequenzauflösung gilt:
+		$$\Delta f = \frac{1}{T_B}$$
+		Für die Beobachtungsdauer $T_B = T_A\cdot N$ gilt mit $T_A = 0.005s$ und $N = 1000$: $T_B = 5$ und dem entsprechend $\Delta f = 0.2\text{Hz}$.\\
+		\\
+		\\
+		Für den Vektorbetrag von $s\in\R^{1000}$ und $S\in\R^{1000}$ gilt 
+		$$\|s\|_{2} \approx 93.68 \approx \|S\|_2 = \|DFT\cdot s\|_2$$
+\end{document}

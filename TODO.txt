@@ -7,7 +7,7 @@ History:
 U39: -
 U38: Philipp
 U37: Philipp
-U36: Steven (upload nach Bugfix)
+U36: Steven
 U35: Kevin 
 U34: Philipp
 U33: Philipp
