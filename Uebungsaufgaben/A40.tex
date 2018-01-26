@@ -1,0 +1,11 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+%\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	\section*{Übungsaufgabe 40:}
+		Seien $s$ ein ditialisiertes Signal mit $N= 2048$ Messwerte und $DWT \in\{0,1\}^{2048\times 2048}$ eine orthogonale Walshmatrix in Sequenzordnung. Dann ist das Walshspektrum zu $S = DTW\cdot s$ das folgende:\\
+		\includegraphics[width = \textwidth]{A40.png}\\
+		Dem Spektrum ist zu entnehmen, dass die Walsh-Funktion mit der größten Ähnlichkeiten zum tatsächlichen Signal die Walsh-Funktionen der niedriegen Ordnungen sind. Man kann insbesondere erkennen, dass der Informationsgehalt der ersten 128 Walsh-Koeffizienten so hoch ist, dass durch die Synthese mit nur 128 Koeffizienten ein dem Ausgangssignal grob-ähnliches Signal entsteht. Rudimentäre Eigenschaften sind wiederzuerkennen auch, wenn sich 3 Zehnerpotenzen größer sind.
+	
+\end{document}

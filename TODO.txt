@@ -1,9 +1,9 @@
 Open Tasks:
-U40: Steven (in progress)
 U41: Philipp
-U42: Steven
 
 History:
+U42: Steven
+U40: Steven
 U39: -
 U38: Philipp
 U37: Philipp
