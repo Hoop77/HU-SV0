@@ -9,6 +9,7 @@ title("Originales Signal");
 xlabel("Signalwert Index");
 ylabel("Signalwert");
 S = DWT * s;
+xlim([0,2048]);
 
 subplot(6, 1, 2);
 plot(x, S);
@@ -16,6 +17,7 @@ title("Transformiertes Signal im Walshspektrum");
 xlabel("Walshkoeffizient");
 ylabel("Wert des Walshkoeffizienten");
 ylim([-5000, 5000]);
+xlim([0,2048]);
 
 K = 8;
 S8 = [S(1:K); zeros(N-K, 1)];
@@ -25,6 +27,7 @@ plot(x, s8);
 title("Zurückgewonnes Signal (K=8)");
 xlabel("Signalwert Index");
 ylabel("Signalwert");
+xlim([0,2048]);
 
 K = 32;
 S32 = [S(1:K); zeros(N-K, 1)];
@@ -34,6 +37,7 @@ plot(x, s32);
 title("Zurückgewonnes Signal (K=32)");
 xlabel("Signalwert Index");
 ylabel("Signalwert");
+xlim([0,2048]);
 
 K = 64;
 S64 = [S(1:K); zeros(N-K, 1)];
@@ -43,6 +47,7 @@ plot(x, s64);
 title("Zurückgewonnes Signal (K=64)");
 xlabel("Signalwert Index");
 ylabel("Signalwert");
+xlim([0,2048]);
 
 K = 128;
 S128 = [S(1:K); zeros(N-K, 1)];
@@ -52,3 +57,4 @@ plot(x, s128);
 title("Zurückgewonnes Signal (K=128)");
 xlabel("Signalwert Index");
 ylabel("Signalwert");
+xlim([0,2048]);
