@@ -1,0 +1,55 @@
+\input{../__baseHEADER}				% Doc-class, Packageimports, fancy stuff
+\input{../__extendBarcode}			% Definition der Kopfzeile
+\input{../__ownCommands}			% Liste der zusätzlichen Commands und redefines
+
+\begin{document}
+	\section*{Übungsaufgabe 44:}
+
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Rechenweg & Rechenzeit [s] & relativ zur FFT \\ \hline
+		DFT ohne Zuteilung & 83.79 & 299256x \\ \hline
+		DFT mit Zuteilung & 31.63 & 112970x \\ \hline
+		FFT & 0.00028 & 1x \\ \hline
+	\end{tabular}
+	
+\newpage
+	\section*{Übungsaufgabe 45:}
+		Sei $x_1(t):\R \to \{0,1\}, t\mapsto 1_{[0,1]}(t)$  und $x_2(t) = \frac{1}{2}t\cdot 1_{[0,1]}(t)$, wobei in $x_1$ und $x_2$ $1_{[0,1]}$ die Standard-Indikatorfunktion ist. Für ein bel. Intervall $I\subset\R$  gilt: $1_{I}(t) = \begin{cases} 1, &\text{wenn } t\in I\\ 0, & \text{sonst.}\end{cases}$.
+		
+		Sei weiter $h:\R\times\R \to \R$ wie folgt definiert:
+		$$h(t,\tau) = x_1(t)\cdot x_2(t+\tau) = 1_{[0,1]}\cdot\frac{1}{2}(t+\tau)\cdot1_{[0,1]}(t+\tau)$$
+		Es gilt $1_{[0,1]}(t+\tau) = 1_{[-\tau,1-\tau]}(t)$ sowie:
+		$$1_{[0,1]}(t)\cdot1_{[-\tau,1-\tau]}(t) = 1_{[0,1]\cap[-\tau,1-\tau]}(t) := \begin{cases}
+		1_{\emptyset}(t) = 0,	& \text{falls } -\infty < \tau < -1\\
+		1_{[-\tau,1]}(t),		& \text{falls } -1 \le \tau < 0\\
+		1_{[0,1-\tau]}(t),		& \text{falls } 0 \le \tau \le 1\\
+		1_{\emptyset}(t) = 0,	& \text{falls } 1 < \tau < \infty
+		\end{cases}$$
+		Es gilt also $h(t,\tau) = \left(\frac{1}{2}t +\frac{1}{2}\tau\right) \cdot 1_{[0,1]\cap[-\tau,1-\tau]}(t)$.\\
+		Sei weiter $k:\R\to\R$ mit dem Standard-Lebesgue-Maß wie folgt definiert:
+		$$k(\tau) = \int_\R h(t,\tau)\lambda(dt)= \int_{[0,1]\cap[-\tau,1-\tau]}\frac{1}{2}t+\frac{1}{2}\tau\lambda(dt)$$
+		\begin{tabular}{r | c c | c}
+			$\tau$	&	$\int_{[0,1]\cap[-\tau,1-\tau]}\frac{1}{2}t\lambda(dt)$ & $\frac{1}{2}\tau\cdot\int_{[0,1]\cap[-\tau,1-\tau]}1\lambda(dt)$&	$k(\tau)$\\
+			\hline
+			$-2.00$	&	0.000	&	 0.000	&	 0.000	\\
+			%$-1.50$	&	 0.0	&	 0.0	&	 0.0	\\
+			$-1.00$	&	0.000	&	 0.000	&	0.000	\\
+			$-0.75$	&	0.109	&	-0.094	&	0.015\\
+			$-0.50$	&	0.188	&	-0.125	&	0.063\\
+			$-0.25$	&	0.234	&	-0.094	&	0.140\\
+			$ 0.00$	&	0.250	&	 0		&	0.250\\
+			$ 0.25$	&	0.141	&	 0.094	&	0.235\\
+			$ 0.50$	&	0.063	&	 0.125	&	0.188\\
+			$ 0.75$	&	0.016	&	 0.094	&	0.110\\
+			$ 1.00$	&	0.000	&	 0.000	&	0.000\\
+			%$ 1.5$	&	\\
+			$ 2.00$	&	0.000	&	 0.000	&	 0.000\\
+		\end{tabular}\\
+	\includegraphics[angle=2]{A45_graph.png}
+\newpage
+	\section*{Übungsaufgabe 46:}
+
+	\includegraphics[angle=90, width=0.8\textwidth]{A46.png}
+	
+\newpage\end{document}
