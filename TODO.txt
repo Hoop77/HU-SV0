@@ -1,9 +1,9 @@
 Open Tasks:
 U47: 
 U46: 
-U45: 
 
 History:
+U45: Steven
 U44: Philipp
 U42: Steven
 U41: Philipp
